@@ -2,7 +2,7 @@
 
 ## Overview
 
-I was lucky enough to work during my summer internship on this RESTful API that I connected to a smart contract deployed on the Ethereum blockchain to allow users  to call all the files they have stored on the IPFS network in a user friendly way. There is no need to connect a wallet to sign a transaction or to communicate any sensitive data to the API, since all the calls to the smart contract are delegated to the owner of the contract (acts as middleware).
+I was lucky enough to work during my summer internship on this RESTful API that I connected to a smart contract deployed on the Ethereum blockchain. The API allows users  to call all the files they have stored on the IPFS network in a user friendly way. There is no need to connect a wallet to sign a transaction or to communicate any sensitive data to the API, since all the calls to the smart contract are delegated to the owner of the contract (acts as middleware).
 
 ## Payment
 
