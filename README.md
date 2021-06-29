@@ -22,7 +22,7 @@ Owner Address : 0xc119f52428aCd711D9fBb71B921f7736504e2864
 Access to the API is granted by providing your email and password. The smart contract will be called to verify the credentials provided by the user.
 
 ```no-highlight
-GET https://localhost/ipfs/login
+GET v1/ipfs/login?email=soufiane@gmail.com&password=*** HTTP/1.1
 
 {
     "status": {
