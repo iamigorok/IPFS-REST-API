@@ -8,6 +8,7 @@ I was lucky enough to work during my summer internship on this RESTful API that 
 
 The smart contract can also include a payment option so that only paid subscriptions would have access to the resources of the API. Payment would be necessary since the POST & PUT requests use transactions that consume gas. The owner can add subscription plans that take into consideration the total number of files that can be owned by each user...
 
+
 ## Network
 
 For now the API smart contract is deployed on the Ropsten testnet.
@@ -16,6 +17,28 @@ For now the API smart contract is deployed on the Ropsten testnet.
 Contract Address : 0x9E4524Cc47C05F138c42d2449d1B449ffdFF35Ac
 Owner Address : 0xc119f52428aCd711D9fBb71B921f7736504e2864
 ```
+## Installation
+
+Docker Pull Command :
+
+```no-highlight
+$ docker pull ssh19/ipfs_api
+```
+
+Run image : 
+```no-highlight
+$ docker run -p 3000:3000 -d ipfs_api
+```
+Print the output:
+```no-highlight
+$ docker logs <container id>
+
+#example 
+Your server is listening on port 3000 (http://localhost:3000)
+Swagger-ui is available on http://localhost:3000/docs
+```
+Now everything is good to go, try to sign up and log in. 
+
 
 ## Authentication
 
