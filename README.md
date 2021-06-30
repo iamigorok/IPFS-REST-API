@@ -98,29 +98,28 @@ The following resources allow a direct connection with the deployed smart contra
 - **<code>PUT</code> /file/updateFile**
 - **<code>DELETE</code> /file/getAllFiles**
 
-A simple <code>POST</code> request to uplaod a file to IPFS :
+A simple <code>POST</code> request to uplaod a file to IPFS using Javascript Fetch :
 
 ```no-highlight
-POST /v1/ipfs/file/uploadFile HTTP/1.1
-Host: localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYWU2NDZmYy1kOTc0LTQ2N2QtOTM5NS05NWY1NGJlYjVkNzkiLCJlbWFpbCI6InNpdWZpYW5laGFqYXppMjNAZ21maWwuY29tIiwiaXNzIjoiU09VRklBTkUiLCJyb2xlIjoidXNlciIsImlhdCI6MTYyNTAwMjE5MH0.OzcUETD2aGawZpOwaH4fxJ_067LHbiOZOI9SsmM7P84
-Content-Length: 363
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiPiIwYWU2NDZmYy1kOTc0LTQ2N2QtOTM5NS05NWY1NGJlYjVkNzkiLCJlbWFpbCI6InNvdWZpYW5laGFqYXppMjNAZ21haWwuY29tIiwiaXNzIjoiU09VRklBTkUiLCJyb2xlIjoidXNlciIsImlhdCI6MTYyNTAwMjE5MH0.OzcUETD2aGawZpOwaH4fxJ_067LHbiOZOI9SsmM7P84");
 
-----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="title"
+var formdata = new FormData();
+formdata.append("title", "doc1");
+formdata.append("file", fileInput.files[0], "doc1.png");
+formdata.append("contentType", "png");
 
-Doc1
-----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="Doc1.png"
-Content-Type: image/png
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: formdata,
+  redirect: 'follow'
+};
 
-(data)
-----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="contentType"
-
-png
-----WebKitFormBoundary7MA4YWxkTrZu0gW
+fetch("http://localhost:3000/v1/ipfs/file/uploadFile", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
 Response :
