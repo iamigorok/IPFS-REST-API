@@ -27,7 +27,7 @@ $ docker pull ssh19/ipfs_api
 
 Run image : 
 ```no-highlight
-$ docker run -p 3000:3000 -d ipfs_api
+$ docker run -p 3000:3000 -d ssh19/ipfs_api
 ```
 Print the output:
 ```no-highlight
