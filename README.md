@@ -105,7 +105,8 @@ Request modifiers may be included in the request URI query string. The following
 
 ## Resources
 
-The following resources allow a direct connection with the deployed smart contract on the Ethereum blockchain
+The following resources allow a direct connection with the deployed smart contract on the Ethereum blockchain.
+`You can check the Swagger-ui on http://localhost:3000/docs for a detailed documentation.`
 
 ### Authentication
 
