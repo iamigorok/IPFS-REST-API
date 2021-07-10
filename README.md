@@ -3,11 +3,10 @@
 ## Overview
 
 I was lucky enough to work during my summer internship on this RESTful API that I connected to the Ethereum blockchain using Infura. The API allows users  to call all the files they have stored on the IPFS network in a user friendly way. There is no need to connect a wallet to sign a transaction or to communicate any sensitive data to the API, since all the calls to the smart contract are delegated to the owner of the contract (acts as middleware).
+## What's IPFS ?
 
-## Payment
-
-The smart contract can also include a payment option so that only paid subscriptions would have access to the resources of the API. Payment would be necessary since the POST & PUT requests use transactions that consume gas. The owner can add subscription plans that take into consideration the total number of files that can be owned by each user...
-
+IPFS is a distributed system for storing and accessing files, websites, applications, and data.
+For more infos : https://docs.ipfs.io/concepts/what-is-ipfs/
 
 ## Network
 
@@ -17,6 +16,10 @@ For now the API smart contract is deployed on the Ropsten testnet.
 Contract Address : 0x9E4524Cc47C05F138c42d2449d1B449ffdFF35Ac
 Owner Address : 0xc119f52428aCd711D9fBb71B921f7736504e2864
 ```
+
+## Payment
+The smart contract can also include a payment option so that only paid subscriptions would have access to the resources of the API. Payment would be necessary since the POST & PUT requests use transactions that consume gas. The owner can add subscription plans that take into consideration the total number of files that can be owned by each user...
+
 ## Installation
 
 Docker Pull Command :
